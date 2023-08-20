@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ui/widget/appbar.dart';
 import 'package:ui/widget/customchip.dart';
 import 'package:ui/widget/heading.dart';
-import 'package:ui/widget/medium_card.dart';
+import 'package:ui/widget/card_gen_factory.dart';
 import 'package:ui/widget/slider.dart';
 
 void main() {
@@ -36,6 +36,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  MediumForegroundShadowCard mediumCardGenerator = MediumForegroundShadowCard();
   final List plants = [
     "Rose",
     "Dandellions",
@@ -51,65 +52,82 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Stack(
-              alignment: Alignment.centerLeft,
-              children: [
+            Container(
+              height: 400,
+              child: Stack(children: [
+                // Container(
+                //   height: 450,
+                //   width: double.infinity,
+                //   color: Colors.red,
+                // ),
                 const AppSlider(),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Row(
+                Positioned(
+                  top: 80,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width,
+                        child: Row(
+                          children: const [
+                            Padding(padding: EdgeInsets.all(10), child: Text("My Garden", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16))),
+                            Spacer(),
+                            Padding(
+                                padding: EdgeInsets.all(10),
+                                child: Icon(
+                                  Icons.notifications,
+                                  color: Colors.white,
+                                ))
+                          ],
+                        ),
+                      ),
+                      const HeadingWidget(
+                        title: "Matt's Garden",
+                        colors: Colors.white,
+                      ),
+                      Container(
+                        height: 35,
+                        width: MediaQuery.of(context).size.width,
+                        margin: const EdgeInsets.only(left: 10),
+                        child: ListView.separated(
+                          separatorBuilder: (context, index) => const SizedBox(
+                            width: 5,
+                          ),
+                          itemCount: 5,
+                          itemBuilder: (ctx, index) => Customchip(label: plants[index]),
+                          scrollDirection: Axis.horizontal,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Positioned(
+                  bottom: 30,
+                  child: SizedBox(
+                    width: MediaQuery.of(context).size.width,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Padding(padding: EdgeInsets.all(10), child: Text("My Garden", style: TextStyle(color: Colors.white, fontSize: 16))),
-                        Spacer(),
-                        Padding(
-                            padding: EdgeInsets.all(10),
-                            child: Icon(
-                              Icons.notifications,
-                              color: Colors.white,
-                            ))
+                        mediumCardGenerator.generate(),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        mediumCardGenerator.generate(),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        mediumCardGenerator.generate()
                       ],
                     ),
-                    const HeadingWidget(
-                      title: "Matt's Garden",
-                      colors: Colors.white,
-                    ),
-                    Container(
-                      height: 35,
-                      margin: EdgeInsets.only(left: 10),
-                      child: ListView.separated(
-                        separatorBuilder: (context, index) => SizedBox(
-                          width: 5,
-                        ),
-                        itemCount: 5,
-                        itemBuilder: (ctx, index) => Customchip(label: plants[index]),
-                        scrollDirection: Axis.horizontal,
-                      ),
-                    ),
-                  ],
+                  ),
                 )
-              ],
+              ]),
             ),
-            const HeadingWidget(title: "Hot Categories"),
-            Padding(
-              padding: const EdgeInsets.only(left: 12.0),
-              child: Wrap(
-                spacing: 5,
-                children: const [Customchip(label: "Rose"), Customchip(label: "Orchid"), Customchip(label: "Room Plants"), Customchip(label: "Dandellion")],
-              ),
-            ),
-            const HeadingWidget(title: "Trending Plants"),
-            Padding(
-              padding: const EdgeInsets.only(left: 12.0),
-              child: Wrap(
-                spacing: 5,
-                runSpacing: 5,
-              ),
-            )
+            Padding(padding: EdgeInsets.all(10), child: Text("Growing calender", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 16))),
           ],
         ),
       ),
