@@ -1,30 +1,26 @@
 import 'package:flutter/material.dart';
 
 abstract class CardGenerator {
-  Card generate();
+  Card generate(Column widgets);
 }
 
 class SmallContainerGenerator implements CardGenerator {
   @override
-  Card generate() {
+  Card generate(Column widgets) {
     return Card(
       color: Colors.white,
       surfaceTintColor: Colors.grey.shade800,
       shadowColor: Colors.grey.shade800,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-      elevation: 5,
-      child: SizedBox(
-        height: 50,
-        width: 30,
-        child: Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [Icon(Icons.thermostat), Text("Temp"), Text("24 C")]),
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+      elevation: 1,
+      child: SizedBox(height: 55, width: 39, child: widgets),
     );
   }
 }
 
 class MediumForegroundShadowCard extends MediumCardGenerator {
   @override
-  Card generate() {
+  Card generate(Column widgets) {
     return Card(
       color: Colors.white,
       surfaceTintColor: Colors.grey.shade800,
@@ -32,11 +28,7 @@ class MediumForegroundShadowCard extends MediumCardGenerator {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       elevation: 5,
       child: Stack(children: [
-        SizedBox(
-          height: 105,
-          width: 80,
-          child: Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [Icon(Icons.thermostat), Text("Temp"), Text("24 C")]),
-        ),
+        SizedBox(height: 105, width: 80, child: widgets),
       ]),
     );
   }
@@ -44,7 +36,7 @@ class MediumForegroundShadowCard extends MediumCardGenerator {
 
 class MediumCardGenerator implements CardGenerator {
   @override
-  Card generate() {
+  Card generate(Column widgets) {
     return Card(
       color: Colors.white,
       surfaceTintColor: Colors.grey.shade800,
@@ -54,7 +46,7 @@ class MediumCardGenerator implements CardGenerator {
       child: SizedBox(
         height: 105,
         width: 80,
-        child: Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [Icon(Icons.thermostat), Text("Temp"), Text("24 C")]),
+        child: widgets,
       ),
     );
   }
@@ -62,18 +54,14 @@ class MediumCardGenerator implements CardGenerator {
 
 class LargeCardGenerator implements CardGenerator {
   @override
-  Card generate() {
+  Card generate(Column widgets) {
     return Card(
       color: Colors.white,
       surfaceTintColor: Colors.grey.shade800,
       shadowColor: Colors.grey.shade800,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-      elevation: 5,
-      child: SizedBox(
-        height: 140,
-        width: 90,
-        child: Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [Icon(Icons.thermostat), Text("Temp"), Text("24 C")]),
-      ),
+      elevation: .5,
+      child: SizedBox(height: 140, width: 120, child: widgets),
     );
   }
 }

@@ -52,14 +52,9 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Container(
-              height: 400,
+            SizedBox(
+              height: 370,
               child: Stack(children: [
-                // Container(
-                //   height: 450,
-                //   width: double.infinity,
-                //   color: Colors.red,
-                // ),
                 const AppSlider(),
                 Positioned(
                   top: 80,
@@ -106,28 +101,201 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 Positioned(
-                  bottom: 30,
+                  bottom: 0,
                   child: SizedBox(
                     width: MediaQuery.of(context).size.width,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        mediumCardGenerator.generate(),
-                        SizedBox(
+                        mediumCardGenerator.generate(
+                          Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [Icon(Icons.thermostat), Text("Temp"), Text("24°C")]),
+                        ),
+                        const SizedBox(
                           width: 10,
                         ),
-                        mediumCardGenerator.generate(),
-                        SizedBox(
+                        mediumCardGenerator.generate(
+                          Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [Icon(Icons.thermostat), Text("Temp"), Text("24°C")]),
+                        ),
+                        const SizedBox(
                           width: 10,
                         ),
-                        mediumCardGenerator.generate()
+                        mediumCardGenerator.generate(
+                          Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [Icon(Icons.thermostat), Text("Temp"), Text("24°C")]),
+                        )
                       ],
                     ),
                   ),
                 )
               ]),
             ),
-            Padding(padding: EdgeInsets.all(10), child: Text("Growing calender", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 16))),
+            SizedBox(
+              height: 20,
+            ),
+            const Padding(padding: EdgeInsets.all(10), child: Text("Growing calender", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 16))),
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    SmallContainerGenerator().generate(Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: const [
+                        Text("Mon"),
+                        Text("12"),
+                        Text("°"),
+                      ],
+                    )),
+                    SmallContainerGenerator().generate(Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: const [
+                        Text("Mon"),
+                        Text("12"),
+                        Text("°"),
+                      ],
+                    )),
+                    SmallContainerGenerator().generate(Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: const [
+                        Text("Mon"),
+                        Text("12"),
+                        Text("°"),
+                      ],
+                    )),
+                    SmallContainerGenerator().generate(Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: const [
+                        Text("Mon"),
+                        Text("12"),
+                        Text("°"),
+                      ],
+                    )),
+                    SmallContainerGenerator().generate(Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: const [
+                        Text("Mon"),
+                        Text("12"),
+                        Text("°"),
+                      ],
+                    )),
+                    SmallContainerGenerator().generate(Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: const [
+                        Text("Mon"),
+                        Text("12"),
+                        Text("°"),
+                      ],
+                    )),
+                    SmallContainerGenerator().generate(Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: const [
+                        Text("Mon"),
+                        Text("12"),
+                        Text("°"),
+                      ],
+                    ))
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const Padding(padding: EdgeInsets.all(10), child: Text("Require attention (6)", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 16))),
+            Padding(
+              padding: const EdgeInsets.only(left: 10.0),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    LargeCardGenerator().generate(Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Image.network(
+                          "https://images.unsplash.com/photo-1587334274535-5f82e7e55dc0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80",
+                          height: 80,
+                          width: 80,
+                        ),
+                        Text("Tomato"),
+                        Text("°Need watering")
+                      ],
+                    )),
+                    LargeCardGenerator().generate(Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Image.network(
+                          "https://images.unsplash.com/photo-1587334274535-5f82e7e55dc0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80",
+                          height: 80,
+                          width: 80,
+                        ),
+                        Text("Tomato"),
+                        Text("°Need watering")
+                      ],
+                    )),
+                    LargeCardGenerator().generate(Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Image.network(
+                          "https://images.unsplash.com/photo-1587334274535-5f82e7e55dc0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80",
+                          height: 80,
+                          width: 80,
+                        ),
+                        Text("Tomato"),
+                        Text("°Need watering")
+                      ],
+                    )),
+                    LargeCardGenerator().generate(Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Image.network(
+                          "https://images.unsplash.com/photo-1587334274535-5f82e7e55dc0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80",
+                          height: 80,
+                          width: 80,
+                        ),
+                        Text("Tomato"),
+                        Text("°Need watering")
+                      ],
+                    )),
+                    LargeCardGenerator().generate(Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Image.network(
+                          "https://images.unsplash.com/photo-1587334274535-5f82e7e55dc0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80",
+                          height: 80,
+                          width: 80,
+                        ),
+                        Text("Tomato"),
+                        Text("°Need watering")
+                      ],
+                    )),
+                    LargeCardGenerator().generate(Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Image.network(
+                          "https://images.unsplash.com/photo-1587334274535-5f82e7e55dc0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80",
+                          height: 80,
+                          width: 80,
+                        ),
+                        Text("Tomato"),
+                        Text("°Need watering")
+                      ],
+                    )),
+                    LargeCardGenerator().generate(Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Image.network(
+                          "https://images.unsplash.com/photo-1587334274535-5f82e7e55dc0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80",
+                          height: 80,
+                          width: 80,
+                        ),
+                        Text("Tomato"),
+                        Text("°Need watering")
+                      ],
+                    )),
+                  ],
+                ),
+              ),
+            )
           ],
         ),
       ),
