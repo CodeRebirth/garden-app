@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ui/widget/appbar.dart';
 import 'package:ui/widget/customchip.dart';
 import 'package:ui/widget/heading.dart';
-import 'package:ui/widget/single_product_container.dart';
+import 'package:ui/widget/medium_card.dart';
 import 'package:ui/widget/slider.dart';
 
 void main() {
@@ -36,6 +36,13 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final List plants = [
+    "Rose",
+    "Dandellions",
+    "Jasmine",
+    "Marigold",
+    "Money Plant",
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,17 +59,37 @@ class _MyHomePageState extends State<MyHomePage> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      children: [
+                        Padding(padding: EdgeInsets.all(10), child: Text("My Garden", style: TextStyle(color: Colors.white, fontSize: 16))),
+                        Spacer(),
+                        Padding(
+                            padding: EdgeInsets.all(10),
+                            child: Icon(
+                              Icons.notifications,
+                              color: Colors.white,
+                            ))
+                      ],
+                    ),
                     const HeadingWidget(
-                      title: "Mats Garden",
+                      title: "Matt's Garden",
                       colors: Colors.white,
                     ),
-                    SizedBox(
+                    Container(
                       height: 35,
-                      child: ListView(
+                      margin: EdgeInsets.only(left: 10),
+                      child: ListView.separated(
+                        separatorBuilder: (context, index) => SizedBox(
+                          width: 5,
+                        ),
+                        itemCount: 5,
+                        itemBuilder: (ctx, index) => Customchip(label: plants[index]),
                         scrollDirection: Axis.horizontal,
-                        children: const [Customchip(label: "Rose"), Customchip(label: "Orchid"), Customchip(label: "Room Plants"), Customchip(label: "Dandellion")],
                       ),
-                    )
+                    ),
                   ],
                 )
               ],
@@ -81,7 +108,6 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Wrap(
                 spacing: 5,
                 runSpacing: 5,
-                children: const [SingleProductContainer(), SingleProductContainer(), SingleProductContainer(), SingleProductContainer()],
               ),
             )
           ],
