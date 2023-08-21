@@ -15,7 +15,11 @@ class HeadingWidget extends StatelessWidget {
       margin: const EdgeInsets.all(12),
       child: Text(
         title,
-        style: TextStyle(fontSize: 27, color: colors ?? Colors.black),
+        style: TextStyle(
+          fontSize: 27,
+          fontWeight: FontWeight.bold,
+          color: colors ?? Colors.black,
+        ),
       ),
     );
   }

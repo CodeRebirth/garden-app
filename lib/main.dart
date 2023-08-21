@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ui/widget/appbar.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:ui/widget/customchip.dart';
 import 'package:ui/widget/heading.dart';
 import 'package:ui/widget/card_gen_factory.dart';
@@ -17,10 +17,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Garden App',
       theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
-      ),
+          fontFamily: GoogleFonts.poppins().fontFamily,
+          primarySwatch: Colors.green,
+          iconTheme: IconThemeData(color: Colors.green[900]),
+          textTheme: TextTheme(displaySmall: TextStyle(color: Colors.green.shade900, fontSize: 10, fontWeight: FontWeight.bold))),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -53,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             SizedBox(
-              height: 370,
+              height: 390,
               child: Stack(children: [
                 const AppSlider(),
                 Positioned(
@@ -108,19 +110,64 @@ class _MyHomePageState extends State<MyHomePage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         mediumCardGenerator.generate(
-                          Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [Icon(Icons.thermostat), Text("Temp"), Text("24°C")]),
+                          Column(mainAxisAlignment: MainAxisAlignment.spaceAround, crossAxisAlignment: CrossAxisAlignment.center, children: [
+                            Spacer(),
+                            Icon(Icons.device_thermostat_outlined),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              "Temp",
+                              style: Theme.of(context).textTheme.displaySmall,
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text("24°C", style: TextStyle(color: Colors.green[900], fontWeight: FontWeight.bold, fontSize: 17)),
+                            Spacer()
+                          ]),
                         ),
                         const SizedBox(
                           width: 10,
                         ),
                         mediumCardGenerator.generate(
-                          Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [Icon(Icons.thermostat), Text("Temp"), Text("24°C")]),
+                          Column(mainAxisAlignment: MainAxisAlignment.spaceAround, crossAxisAlignment: CrossAxisAlignment.center, children: [
+                            Spacer(),
+                            Icon(Icons.wb_sunny_outlined),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              "Light",
+                              style: Theme.of(context).textTheme.displaySmall,
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text("76%", style: TextStyle(color: Colors.green[900], fontWeight: FontWeight.bold, fontSize: 17)),
+                            Spacer()
+                          ]),
                         ),
                         const SizedBox(
                           width: 10,
                         ),
                         mediumCardGenerator.generate(
-                          Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [Icon(Icons.thermostat), Text("Temp"), Text("24°C")]),
+                          Column(mainAxisAlignment: MainAxisAlignment.spaceAround, crossAxisAlignment: CrossAxisAlignment.center, children: [
+                            Spacer(),
+                            Icon(Icons.water_drop),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              "Humidity",
+                              style: Theme.of(context).textTheme.displaySmall,
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text("42%", style: TextStyle(color: Colors.green[900], fontWeight: FontWeight.bold, fontSize: 17)),
+                            Spacer()
+                          ]),
                         )
                       ],
                     ),
@@ -128,7 +175,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 )
               ]),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             const Padding(padding: EdgeInsets.all(10), child: Text("Growing calender", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 16))),
@@ -140,57 +187,99 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: [
                     SmallContainerGenerator().generate(Column(
                       mainAxisAlignment: MainAxisAlignment.end,
-                      children: const [
-                        Text("Mon"),
-                        Text("12"),
+                      children: [
+                        Text(
+                          "Mon",
+                          style: Theme.of(context).textTheme.displaySmall,
+                        ),
+                        Text(
+                          "12",
+                          style: TextStyle(color: Colors.green[900], fontWeight: FontWeight.bold, fontSize: 17),
+                        ),
                         Text("°"),
                       ],
                     )),
                     SmallContainerGenerator().generate(Column(
                       mainAxisAlignment: MainAxisAlignment.end,
-                      children: const [
-                        Text("Mon"),
-                        Text("12"),
+                      children: [
+                        Text(
+                          "Mon",
+                          style: Theme.of(context).textTheme.displaySmall,
+                        ),
+                        Text(
+                          "12",
+                          style: TextStyle(color: Colors.green[900], fontWeight: FontWeight.bold, fontSize: 17),
+                        ),
                         Text("°"),
                       ],
                     )),
                     SmallContainerGenerator().generate(Column(
                       mainAxisAlignment: MainAxisAlignment.end,
-                      children: const [
-                        Text("Mon"),
-                        Text("12"),
+                      children: [
+                        Text(
+                          "Mon",
+                          style: Theme.of(context).textTheme.displaySmall,
+                        ),
+                        Text(
+                          "12",
+                          style: TextStyle(color: Colors.green[900], fontWeight: FontWeight.bold, fontSize: 17),
+                        ),
                         Text("°"),
                       ],
                     )),
                     SmallContainerGenerator().generate(Column(
                       mainAxisAlignment: MainAxisAlignment.end,
-                      children: const [
-                        Text("Mon"),
-                        Text("12"),
+                      children: [
+                        Text(
+                          "Mon",
+                          style: Theme.of(context).textTheme.displaySmall,
+                        ),
+                        Text(
+                          "12",
+                          style: TextStyle(color: Colors.green[900], fontWeight: FontWeight.bold, fontSize: 17),
+                        ),
                         Text("°"),
                       ],
                     )),
                     SmallContainerGenerator().generate(Column(
                       mainAxisAlignment: MainAxisAlignment.end,
-                      children: const [
-                        Text("Mon"),
-                        Text("12"),
+                      children: [
+                        Text(
+                          "Mon",
+                          style: Theme.of(context).textTheme.displaySmall,
+                        ),
+                        Text(
+                          "12",
+                          style: TextStyle(color: Colors.green[900], fontWeight: FontWeight.bold, fontSize: 17),
+                        ),
                         Text("°"),
                       ],
                     )),
                     SmallContainerGenerator().generate(Column(
                       mainAxisAlignment: MainAxisAlignment.end,
-                      children: const [
-                        Text("Mon"),
-                        Text("12"),
+                      children: [
+                        Text(
+                          "Mon",
+                          style: Theme.of(context).textTheme.displaySmall,
+                        ),
+                        Text(
+                          "12",
+                          style: TextStyle(color: Colors.green[900], fontWeight: FontWeight.bold, fontSize: 17),
+                        ),
                         Text("°"),
                       ],
                     )),
                     SmallContainerGenerator().generate(Column(
                       mainAxisAlignment: MainAxisAlignment.end,
-                      children: const [
-                        Text("Mon"),
-                        Text("12"),
+                      children: [
+                        Text(
+                          "Mon",
+                          style: Theme.of(context).textTheme.displaySmall,
+                        ),
+                        Text(
+                          "12",
+                          style: TextStyle(color: Colors.green[900], fontWeight: FontWeight.bold, fontSize: 17),
+                        ),
                         Text("°"),
                       ],
                     ))

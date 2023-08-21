@@ -9,6 +9,9 @@ class Customchip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Chip(label: Text(label));
+    return Chip(
+      label: Text(label),
+      padding: EdgeInsets.zero,
+    );
   }
 }
