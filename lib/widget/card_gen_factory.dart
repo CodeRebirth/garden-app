@@ -4,7 +4,7 @@ abstract class CardGenerator {
   Card generate(Column widgets);
 }
 
-class SmallContainerGenerator implements CardGenerator {
+class ExtraSmallContainerGenerator implements CardGenerator {
   @override
   Card generate(Column widgets) {
     return Card(
@@ -37,13 +37,12 @@ class MediumCardGenerator implements CardGenerator {
   Card generate(Column widgets) {
     return Card(
       color: Colors.white,
-      surfaceTintColor: Colors.grey.shade800,
-      shadowColor: Colors.grey.shade800,
+      shadowColor: Colors.grey.shade400,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-      elevation: 3,
+      elevation: 10,
       child: SizedBox(
-        height: 105,
-        width: 80,
+        height: 90,
+        width: 70,
         child: widgets,
       ),
     );

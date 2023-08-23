@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ui/screens/single_item_details.dart';
+import 'package:ui/widget/growing_calender.dart';
 
 import '../widget/card_gen_factory.dart';
 import '../widget/customchip.dart';
@@ -156,115 +157,7 @@ class _MyHomePageState extends State<MyHomePage> {
             const SizedBox(
               height: 20,
             ),
-            const Padding(padding: EdgeInsets.all(10), child: Text("Growing calender", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 16))),
-            Padding(
-              padding: const EdgeInsets.only(left: 8.0),
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    SmallContainerGenerator().generate(Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Text(
-                          "Mon",
-                          style: Theme.of(context).textTheme.displaySmall,
-                        ),
-                        Text(
-                          "12",
-                          style: TextStyle(color: Colors.green[900], fontWeight: FontWeight.bold, fontSize: 17),
-                        ),
-                        Text("°"),
-                      ],
-                    )),
-                    SmallContainerGenerator().generate(Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Text(
-                          "Mon",
-                          style: Theme.of(context).textTheme.displaySmall,
-                        ),
-                        Text(
-                          "12",
-                          style: TextStyle(color: Colors.green[900], fontWeight: FontWeight.bold, fontSize: 17),
-                        ),
-                        Text("°"),
-                      ],
-                    )),
-                    SmallContainerGenerator().generate(Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Text(
-                          "Mon",
-                          style: Theme.of(context).textTheme.displaySmall,
-                        ),
-                        Text(
-                          "12",
-                          style: TextStyle(color: Colors.green[900], fontWeight: FontWeight.bold, fontSize: 17),
-                        ),
-                        Text("°"),
-                      ],
-                    )),
-                    SmallContainerGenerator().generate(Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Text(
-                          "Mon",
-                          style: Theme.of(context).textTheme.displaySmall,
-                        ),
-                        Text(
-                          "12",
-                          style: TextStyle(color: Colors.green[900], fontWeight: FontWeight.bold, fontSize: 17),
-                        ),
-                        Text("°"),
-                      ],
-                    )),
-                    SmallContainerGenerator().generate(Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Text(
-                          "Mon",
-                          style: Theme.of(context).textTheme.displaySmall,
-                        ),
-                        Text(
-                          "12",
-                          style: TextStyle(color: Colors.green[900], fontWeight: FontWeight.bold, fontSize: 17),
-                        ),
-                        Text("°"),
-                      ],
-                    )),
-                    SmallContainerGenerator().generate(Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Text(
-                          "Mon",
-                          style: Theme.of(context).textTheme.displaySmall,
-                        ),
-                        Text(
-                          "12",
-                          style: TextStyle(color: Colors.green[900], fontWeight: FontWeight.bold, fontSize: 17),
-                        ),
-                        Text("°"),
-                      ],
-                    )),
-                    SmallContainerGenerator().generate(Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Text(
-                          "Mon",
-                          style: Theme.of(context).textTheme.displaySmall,
-                        ),
-                        Text(
-                          "12",
-                          style: TextStyle(color: Colors.green[900], fontWeight: FontWeight.bold, fontSize: 17),
-                        ),
-                        Text("°"),
-                      ],
-                    ))
-                  ],
-                ),
-              ),
-            ),
+            const GrowingCalender(),
             const SizedBox(
               height: 20,
             ),
