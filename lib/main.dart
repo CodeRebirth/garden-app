@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           scaffoldBackgroundColor: Colors.white,
           fontFamily: GoogleFonts.poppins().fontFamily,
-          primarySwatch: Colors.green,
+          bottomNavigationBarTheme: BottomNavigationBarThemeData(backgroundColor: Colors.white, unselectedItemColor: Colors.black, elevation: 0, selectedItemColor: Colors.green[900]),
           iconTheme: IconThemeData(color: Colors.green[900]),
           textTheme: TextTheme(displaySmall: TextStyle(color: Colors.green.shade900, fontSize: 10, fontWeight: FontWeight.bold))),
       home: const MyHomePage(title: 'Garden'),

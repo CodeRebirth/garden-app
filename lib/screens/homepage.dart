@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ui/screens/single_item_details.dart';
+import 'package:ui/widget/custom_bottom_navbar.dart';
 import 'package:ui/widget/growing_calender.dart';
 
 import '../widget/card_gen_factory.dart';
@@ -28,6 +29,12 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: CustomBottomNavigationBar(items: const [
+        BottomNavigationBarItem(icon: Icon(Icons.home_filled), label: "Home"),
+        BottomNavigationBarItem(icon: Icon(Icons.shopping_bag), label: "Shopping"),
+        BottomNavigationBarItem(icon: Icon(Icons.calendar_month), label: "Calender"),
+        BottomNavigationBarItem(icon: Icon(Icons.scanner), label: "Scanner")
+      ], currentIndex: 0, onTap: (int) {}),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
