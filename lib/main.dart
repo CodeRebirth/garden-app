@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ui/widget/customchip.dart';
-import 'package:ui/widget/heading.dart';
-import 'package:ui/widget/card_gen_factory.dart';
-import 'package:ui/widget/slider.dart';
-
+import 'package:ui/screens/garden_page.dart';
 import 'screens/homepage.dart';
 
 void main() {
@@ -25,8 +21,18 @@ class MyApp extends StatelessWidget {
           fontFamily: GoogleFonts.poppins().fontFamily,
           bottomNavigationBarTheme: BottomNavigationBarThemeData(backgroundColor: Colors.white, unselectedItemColor: Colors.black, elevation: 0, selectedItemColor: Colors.green[900]),
           iconTheme: IconThemeData(color: Colors.green[900]),
-          textTheme: TextTheme(displaySmall: TextStyle(color: Colors.green.shade900, fontSize: 10, fontWeight: FontWeight.bold))),
-      home: const MyHomePage(title: 'Garden'),
+          textTheme: TextTheme(
+              displaySmall: TextStyle(
+                color: Colors.green.shade900,
+                fontSize: 10,
+                fontWeight: FontWeight.bold,
+              ),
+              labelSmall: const TextStyle(
+                color: Colors.black,
+                fontSize: 14,
+                fontWeight: FontWeight.bold,
+              ))),
+      home: const MyHomePage(),
     );
   }
 }

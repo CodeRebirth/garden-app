@@ -19,14 +19,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
     return Container(
       height: height,
       padding: EdgeInsets.zero,
-      decoration: const BoxDecoration(
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black12,
-            blurRadius: 2.0,
-          ),
-        ],
-      ),
+      decoration: const BoxDecoration(),
       child: SingleChildScrollView(
         physics: const NeverScrollableScrollPhysics(),
         child: BottomNavigationBar(
