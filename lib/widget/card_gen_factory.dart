@@ -4,11 +4,22 @@ abstract class CardGenerator {
   Card generate(Column widgets);
 }
 
+class OutlinedBorderContainerGenerator implements CardGenerator {
+  @override
+  Card generate(Column widgets) {
+    return Card(
+      shadowColor: Colors.grey.shade800,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6), side: const BorderSide(color: Colors.green)),
+      elevation: 1,
+      child: SizedBox(height: 70, width: 45, child: widgets),
+    );
+  }
+}
+
 class ExtraSmallContainerGenerator implements CardGenerator {
   @override
   Card generate(Column widgets) {
     return Card(
-      color: Colors.white,
       shadowColor: Colors.grey.shade800,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
       elevation: 1,

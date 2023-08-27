@@ -18,20 +18,35 @@ class GrowingCalender extends StatelessWidget {
             child: Row(
               children: [
                 for (var i = 1; i <= 31; i++)
-                  ExtraSmallContainerGenerator().generate(Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Text(
-                        "Mon",
-                        style: Theme.of(context).textTheme.displaySmall,
-                      ),
-                      Text(
-                        "$i",
-                        style: TextStyle(color: Colors.green[900], fontWeight: FontWeight.bold, fontSize: 17),
-                      ),
-                      const Text("°"),
-                    ],
-                  )),
+                  i == 2
+                      ? OutlinedBorderContainerGenerator().generate(Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Text(
+                              "Mon",
+                              style: Theme.of(context).textTheme.displaySmall,
+                            ),
+                            Text(
+                              "$i",
+                              style: TextStyle(color: Colors.green[900], fontWeight: FontWeight.bold, fontSize: 17),
+                            ),
+                            const Text("°"),
+                          ],
+                        ))
+                      : ExtraSmallContainerGenerator().generate(Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Text(
+                              "Mon",
+                              style: Theme.of(context).textTheme.displaySmall,
+                            ),
+                            Text(
+                              "$i",
+                              style: TextStyle(color: Colors.green[900], fontWeight: FontWeight.bold, fontSize: 17),
+                            ),
+                            const Text("°"),
+                          ],
+                        )),
               ],
             ),
           ),
