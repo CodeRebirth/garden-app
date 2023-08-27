@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ui/screens/garden_page.dart';
+import 'package:ui/screens/growing_calender_screen.dart';
 import 'package:ui/screens/scanner.dart';
 import 'package:ui/widget/custom_bottom_navbar.dart';
 
@@ -21,7 +22,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  final screenList = [GardenPage(), Scanner(), Scanner(), Scanner()];
+  final screenList = [const GardenPage(), const Scanner(), const GrowingCalenderScreen(), const Scanner()];
 
   @override
   Widget build(BuildContext context) {

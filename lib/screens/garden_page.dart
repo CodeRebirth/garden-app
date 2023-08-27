@@ -46,8 +46,8 @@ class _GardenPageState extends State<GardenPage> {
                     ),
                     SizedBox(
                       width: MediaQuery.of(context).size.width,
-                      child: Row(
-                        children: const [
+                      child: const Row(
+                        children: [
                           Padding(padding: EdgeInsets.all(10), child: Text("My Garden", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16))),
                           Spacer(),
                           Padding(
@@ -88,20 +88,20 @@ class _GardenPageState extends State<GardenPage> {
                     children: [
                       mediumCardGenerator.generate(
                         Column(mainAxisAlignment: MainAxisAlignment.spaceAround, crossAxisAlignment: CrossAxisAlignment.center, children: [
-                          Spacer(),
-                          Icon(Icons.device_thermostat_outlined),
-                          SizedBox(
+                          const Spacer(),
+                          const Icon(Icons.device_thermostat_outlined),
+                          const SizedBox(
                             height: 5,
                           ),
                           Text(
                             "Temp",
                             style: Theme.of(context).textTheme.displaySmall,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 5,
                           ),
                           Text("24°C", style: TextStyle(color: Colors.green[900], fontWeight: FontWeight.bold, fontSize: 17)),
-                          Spacer()
+                          const Spacer()
                         ]),
                       ),
                       const SizedBox(
@@ -109,20 +109,20 @@ class _GardenPageState extends State<GardenPage> {
                       ),
                       mediumCardGenerator.generate(
                         Column(mainAxisAlignment: MainAxisAlignment.spaceAround, crossAxisAlignment: CrossAxisAlignment.center, children: [
-                          Spacer(),
-                          Icon(Icons.wb_sunny_outlined),
-                          SizedBox(
+                          const Spacer(),
+                          const Icon(Icons.wb_sunny_outlined),
+                          const SizedBox(
                             height: 5,
                           ),
                           Text(
                             "Light",
                             style: Theme.of(context).textTheme.displaySmall,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 5,
                           ),
                           Text("76%", style: TextStyle(color: Colors.green[900], fontWeight: FontWeight.bold, fontSize: 17)),
-                          Spacer()
+                          const Spacer()
                         ]),
                       ),
                       const SizedBox(
@@ -130,20 +130,20 @@ class _GardenPageState extends State<GardenPage> {
                       ),
                       mediumCardGenerator.generate(
                         Column(mainAxisAlignment: MainAxisAlignment.spaceAround, crossAxisAlignment: CrossAxisAlignment.center, children: [
-                          Spacer(),
-                          Icon(Icons.water_drop),
-                          SizedBox(
+                          const Spacer(),
+                          const Icon(Icons.water_drop),
+                          const SizedBox(
                             height: 5,
                           ),
                           Text(
                             "Humidity",
                             style: Theme.of(context).textTheme.displaySmall,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 5,
                           ),
                           Text("42%", style: TextStyle(color: Colors.green[900], fontWeight: FontWeight.bold, fontSize: 17)),
-                          Spacer()
+                          const Spacer()
                         ]),
                       )
                     ],
@@ -167,7 +167,7 @@ class _GardenPageState extends State<GardenPage> {
               child: Row(
                 children: [
                   InkWell(
-                    onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (ctx) => SingleItemDetails())),
+                    onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (ctx) => const SingleItemDetails())),
                     child: LargeCardGenerator().generate(Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
@@ -176,8 +176,8 @@ class _GardenPageState extends State<GardenPage> {
                           height: 80,
                           width: 80,
                         ),
-                        Text("Tomato"),
-                        Text("°Need watering")
+                        const Text("Tomato"),
+                        const Text("°Need watering")
                       ],
                     )),
                   ),
@@ -189,8 +189,8 @@ class _GardenPageState extends State<GardenPage> {
                         height: 80,
                         width: 80,
                       ),
-                      Text("Tomato"),
-                      Text("°Need watering")
+                      const Text("Tomato"),
+                      const Text("°Need watering")
                     ],
                   )),
                   LargeCardGenerator().generate(Column(
@@ -201,8 +201,8 @@ class _GardenPageState extends State<GardenPage> {
                         height: 80,
                         width: 80,
                       ),
-                      Text("Tomato"),
-                      Text("°Need watering")
+                      const Text("Tomato"),
+                      const Text("°Need watering")
                     ],
                   )),
                   LargeCardGenerator().generate(Column(
@@ -213,8 +213,8 @@ class _GardenPageState extends State<GardenPage> {
                         height: 80,
                         width: 80,
                       ),
-                      Text("Tomato"),
-                      Text("°Need watering")
+                      const Text("Tomato"),
+                      const Text("°Need watering")
                     ],
                   )),
                   LargeCardGenerator().generate(Column(
@@ -225,8 +225,8 @@ class _GardenPageState extends State<GardenPage> {
                         height: 80,
                         width: 80,
                       ),
-                      Text("Tomato"),
-                      Text("°Need watering")
+                      const Text("Tomato"),
+                      const Text("°Need watering")
                     ],
                   )),
                   LargeCardGenerator().generate(Column(
@@ -237,8 +237,8 @@ class _GardenPageState extends State<GardenPage> {
                         height: 80,
                         width: 80,
                       ),
-                      Text("Tomato"),
-                      Text("°Need watering")
+                      const Text("Tomato"),
+                      const Text("°Need watering")
                     ],
                   )),
                   LargeCardGenerator().generate(Column(
@@ -249,8 +249,8 @@ class _GardenPageState extends State<GardenPage> {
                         height: 80,
                         width: 80,
                       ),
-                      Text("Tomato"),
-                      Text("°Need watering")
+                      const Text("Tomato"),
+                      const Text("°Need watering")
                     ],
                   )),
                 ],

@@ -143,7 +143,7 @@ class AddToGardenButton extends StatelessWidget {
         style: ButtonStyle(
             shape: MaterialStatePropertyAll(RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))),
             backgroundColor: MaterialStateProperty.all(Colors.green.shade900),
-            minimumSize: MaterialStateProperty.all(Size(100, 50))),
+            minimumSize: MaterialStateProperty.all(const Size(100, 50))),
         onPressed: () {},
         child: Text(
           "+ Add to my garden",
@@ -199,29 +199,30 @@ class ScanDetails extends StatelessWidget {
                       height: 10,
                     ),
                     Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        MediumCardGenerator().generate(Column(
+                        MediumCardGenerator().generate(const Column(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [Icon(Icons.sunny), Text("III - IV")],
+                          children: [Icon(Icons.sunny), Text("III - IV")],
                         )),
-                        MediumCardGenerator().generate(Column(
+                        MediumCardGenerator().generate(const Column(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [Icon(Icons.sunny), Text("III - IV")],
+                          children: [Icon(Icons.sunny), Text("III - IV")],
                         )),
-                        MediumCardGenerator().generate(Column(
+                        MediumCardGenerator().generate(const Column(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [Icon(Icons.sunny), Text("III - IV")],
+                          children: [Icon(Icons.sunny), Text("III - IV")],
                         )),
-                        MediumCardGenerator().generate(Column(
+                        MediumCardGenerator().generate(const Column(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [Icon(Icons.sunny), Text("III - IV")],
+                          children: [Icon(Icons.sunny), Text("III - IV")],
                         ))
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
-                    Align(alignment: Alignment.center, child: const AddToGardenButton())
+                    const Align(alignment: Alignment.center, child: AddToGardenButton())
                   ],
                 ),
               ),

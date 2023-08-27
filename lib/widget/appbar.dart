@@ -12,14 +12,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      centerTitle: true,
-      backgroundColor: Colors.green.shade900,
-      title: Padding(
-        padding: const EdgeInsets.only(bottom: 20),
-        child: Text(
-          title,
-          style: style ?? const TextStyle(fontSize: 30, fontFamily: 'OpenSans'),
-        ),
+      backgroundColor: Colors.white,
+      elevation: 0,
+      iconTheme: IconTheme.of(context),
+      titleTextStyle: Theme.of(context).textTheme.titleLarge,
+      title: Row(
+        children: [Text(title), Spacer(), Icon(Icons.notifications)],
       ),
     );
   }

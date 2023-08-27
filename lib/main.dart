@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ui/screens/garden_page.dart';
 import 'screens/homepage.dart';
 
 void main() {
