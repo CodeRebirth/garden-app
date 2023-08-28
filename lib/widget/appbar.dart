@@ -17,7 +17,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       iconTheme: IconTheme.of(context),
       titleTextStyle: Theme.of(context).textTheme.titleLarge,
       title: Row(
-        children: [Text(title), Spacer(), Icon(Icons.notifications)],
+        children: [Text(title), const Spacer(), const Icon(Icons.notifications)],
       ),
     );
   }
