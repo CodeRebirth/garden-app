@@ -1,1 +1,1 @@
-Garden App for people with plant care system.
+Garden App for plant care.
